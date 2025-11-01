@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  --sb-track-color: #000000;
+  --sb-thumb-color: #6baf8d;
+  --sb-size: 10px;
+}
+
+ul::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 5px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 5px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  ul {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+.sheikh{
+  display: flex;
+  justify-content: center;
+}
+
+.sheikh ul {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: linear-gradient(to bottom, transparent, #f0f0f0);
+  margin: 30px;
+  box-shadow: 0px 0px 10px 0px #6baf8dab;
+}
+
+.sheikh ul li {
+  list-style: none;
+  border: 1px solid #aaa;
+  padding-block: 10px;
+  display: block;
+  transition: 0.5s;
+  height: 50px;
+  cursor: pointer;
+}
+
+.sheikh ul li:hover {
+  font-size: 20px;
+}
+.sheikh ul a {
+  color: #bbb;
+}
+
+@media (max-width: 700px) {
+  .sheikh ul {
+    width: 200px;
+    height: 200px;
+  }
+}

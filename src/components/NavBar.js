@@ -1,0 +1,192 @@
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-scroll";
+
+const pages = ["Home", "Holy Quran", "Adhkar", "Contact Us"];
+function ResponsiveAppBar({ locales, mode, setMode, handleLocales }) {
+  const settings = [mode, "اللغة العربية"];
+  const { t } = useTranslation();
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  return (
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: "#001f3f", color: "white" }}
+    >
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Typography
+            variant="h4"
+            noWrap
+            component="a"
+            href="#app-bar-with-responsive-menu"
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontWeight: 800,
+              textDecoration: "none",
+              color: "primary.main",
+            }}
+          >
+            {t("Muslim Paradise")}
+          </Typography>
+
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="settings of current page"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{ display: { xs: "block", md: "none" } }}
+            >
+              {pages.map((page, index) => (
+                <Link to={page} key={index} smooth={true} duration={500}>
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography
+                      variant="h5"
+                      sx={{ textAlign: "center" }}
+                      // color="inherit"
+                    >
+                      {t(page)}
+                    </Typography>
+                  </MenuItem>
+                </Link>
+              ))}
+            </Menu>
+          </Box>
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="#app-bar-with-responsive-menu"
+            sx={{
+              mr: 2,
+              display: { xs: "flex", md: "none" },
+              flexGrow: 1,
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              color: "primary.main",
+              textDecoration: "none",
+            }}
+          >
+            {t("Muslim Paradise")}
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {pages.map((page, index) => (
+              <Link to={page} key={index} smooth={true} duration={1500}>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    // color: "inherit",
+                    display: "block",
+                    fontSize: "18px",
+                    color: "secondary.main",
+                  }}
+                >
+                  {t(page)}
+                </Button>
+              </Link>
+            ))}
+          </Box>
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title={t("Open settings")}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <Avatar
+                  alt="جنة المسلم"
+                  src="/muslimParadise.png"
+                  sx={{ border: "2px solid green", borderRadius: "50%" }}
+                />
+              </IconButton>
+            </Tooltip>
+            <Menu
+              sx={{ mt: "45px" }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting, index) => (
+                <MenuItem
+                  key={setting}
+                  value={index === 0 ? mode : null}
+                  onClick={() => {
+                    handleCloseUserMenu();
+                    index === 0
+                      ? setMode(
+                          mode === "Dark Mode" ? "Light Mode" : "Dark Mode"
+                        )
+                      : handleLocales();
+                  }}
+                >
+                  <Typography sx={{ textAlign: "center" }}>
+                    {t(setting)}
+                  </Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
+}
+export default ResponsiveAppBar;

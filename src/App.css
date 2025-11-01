@@ -1,38 +1,128 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: rgba(0, 0, 128, 0.42);
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  position: relative;
+  margin-block: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* Home Section Start*/
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.home {
   color: white;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translatey(-50%);
+  text-align: left;
+  background-color: #cad9ff17;
+  box-shadow: 0px 0px 50px 0px teal;
+  padding: 10px;
+  border-radius: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Home Section End*/
+
+/* Quran Section Start */
+
+.playSurah {
+  display: flex;
+  align-items: center;
+  padding-block: 20px;
+  margin-block: 20px;
+  justify-content: space-evenly;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 900px) {
+  .playSurah {
+    flex-direction: column-reverse;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Quran Section End */
+
+.Link {
+  position: fixed;
+  color: navajowhite;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 15px;
+  bottom: 50px;
+  right: 50px;
+  background-color: #6a1b9a;
+  transition: 1s !important;
+  cursor: pointer;
+}
+
+.title h2 {
+  font-size: 35px;
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.cardContent {
+  padding: 0 !important;
+}
+.cardMedia {
+  transition: 0.5s;
+}
+.cardMedia:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+  overflow: hidden;
+}
+@media (max-width: 650px) {
+  .title h2 {
+    font-size: 30px;
   }
+}
+
+@media (max-width: 500px) {
+  .title h2 {
+    font-size: 25px;
+  }
+}
+
+@font-face {
+  font-family: Merhey;
+  src: url("../public/fonts/Merhey/Marhey-Bold.ttf");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: Merhey;
+  src: url("../public/fonts/Merhey/Marhey-SemiBold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Merhey;
+  src: url("../public/fonts/Merhey/Marhey-Regular.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: Merhey;
+  src: url("../public/fonts/Merhey/Marhey-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Merhey;
+  src: url("../public/fonts/Merhey/Marhey-Light.ttf");
+  font-weight: 400;
 }
