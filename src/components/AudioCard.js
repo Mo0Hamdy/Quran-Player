@@ -1,12 +1,21 @@
+import { useState, useRef, useContext } from "react";
+
+// MUI Components
 import { Card, IconButton } from "@mui/material";
 import { PlayArrow, Pause } from "@mui/icons-material";
-import { useState, useRef } from "react";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
+import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 
-export default function AudioCard({ title, src }) {
+// Context
+import { SurahContext } from "../context/surahProvider";
+import { LanguageContext } from "../context/languageProvider";
+
+export default function AudioCard({ sheikhData, setSheikhData }) {
   const [isPlaying, setIsPlaying] = useState(false);
-
+  const surah = useContext(SurahContext);
+  const { locales } = useContext(LanguageContext);
+  const arabicNames = surah.surahName.arabicName;
+  const englishNames = surah.surahName.englishName;
   const audioRef = useRef(null);
 
   const handlePlayPause = () => {
@@ -17,6 +26,17 @@ export default function AudioCard({ title, src }) {
     }
     setIsPlaying(!isPlaying);
   };
+  const handlePrevNext = () => {
+    if (isPlaying) {
+      setIsPlaying(false);
+      setTimeout(() => {
+        setIsPlaying(true);
+        audioRef.current.play();
+      }, 1000);
+    } else {
+      audioRef.current.pause();
+    }
+  };
 
   return (
     <Card
@@ -24,20 +44,58 @@ export default function AudioCard({ title, src }) {
         display: "flex",
         alignItems: "center",
         p: 2,
-        borderTop:"2px solid white"
+        borderTop: "2px solid white",
       }}
     >
       <IconButton sx={{ color: "text.icon" }}>
-        <SkipNextIcon />
+        <SkipNextIcon
+          onClick={(e) => {
+            sheikhData.Index >= 114
+              ? e.preventDefault()
+              : // const fileNumber = String(sheikhData.Index).padStart(3, "0");
+
+                setSheikhData({
+                  ...sheikhData,
+                  Index: sheikhData.Index + 1,
+                  surahLink: `${sheikhData.host}${String(
+                    sheikhData.Index + 1
+                  ).padStart(3, "0")}.mp3`,
+                  surahName:
+                    locales === "ar"
+                      ? arabicNames[sheikhData.Index]
+                      : englishNames[sheikhData.Index],
+                });
+            handlePrevNext();
+          }}
+        />
       </IconButton>
       <IconButton onClick={handlePlayPause} sx={{ color: "text.icon" }}>
         {isPlaying ? <Pause /> : <PlayArrow />}
       </IconButton>
       <IconButton sx={{ color: "text.icon" }}>
-        <SkipPreviousIcon />
-      </IconButton>
+        <SkipPreviousIcon
+          onClick={(e) => {
+            handlePlayPause();
 
-      <audio ref={audioRef} src={src} type="audio" />
+            sheikhData.Index <= 1
+              ? e.preventDefault()
+              : // const fileNumber = String(sheikhData.Index).padStart(3, "0");
+                setSheikhData({
+                  ...sheikhData,
+                  Index: sheikhData.Index - 1,
+                  surahLink: `${sheikhData.host}${String(
+                    sheikhData.Index - 1
+                  ).padStart(3, "0")}.mp3`,
+                  surahName:
+                    locales === "ar"
+                      ? arabicNames[sheikhData.Index - 2]
+                      : englishNames[sheikhData.Index - 2],
+                });
+            handlePrevNext();
+          }}
+        />
+      </IconButton>
+      <audio ref={audioRef} src={sheikhData.surahLink} type="audio" />
     </Card>
   );
 }

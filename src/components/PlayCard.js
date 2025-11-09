@@ -1,11 +1,14 @@
+import { useTranslation } from "react-i18next";
+
+// MUI Components
+import AudioCard from "./AudioCard";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import AudioCard from "./AudioCard";
-import { useTranslation } from "react-i18next";
-export default function PlayCard({ sheikhData }) {
+import CardContent from "@mui/material/CardContent";
+
+export default function PlayCard({ sheikhData, setSheikhData }) {
   const { t } = useTranslation();
   return (
     <Card
@@ -14,6 +17,7 @@ export default function PlayCard({ sheikhData }) {
         height: "100%",
         border: "2px solid white",
         borderRadius: "20px",
+        width: "328px",
       }}
     >
       <Box
@@ -27,7 +31,10 @@ export default function PlayCard({ sheikhData }) {
             {t(sheikhData?.name)}
           </Typography>
         </CardContent>
-        <AudioCard title={sheikhData.surahName} src={sheikhData?.surahLink} />
+        <AudioCard
+          sheikhData={sheikhData}
+          setSheikhData={setSheikhData}
+        />
       </Box>
       <CardMedia component="img" sx={{ width: 151 }} image={sheikhData?.img} />
     </Card>

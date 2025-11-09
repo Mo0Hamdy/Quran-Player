@@ -13,13 +13,17 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-scroll";
+import { LanguageContext } from "../context/languageProvider";
+import { useContext } from "react";
 
 const pages = ["Home", "Holy Quran", "Adhkar", "Contact Us"];
-function ResponsiveAppBar({ locales, mode, setMode, handleLocales }) {
+function ResponsiveAppBar({ mode, setMode }) {
   const settings = [mode, "اللغة العربية"];
   const { t } = useTranslation();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+   const {locales,handleLocales }=useContext(LanguageContext)
+  // console.log(locales)
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -39,7 +43,7 @@ function ResponsiveAppBar({ locales, mode, setMode, handleLocales }) {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#001f3f", color: "white" }}
+      sx={{ backgroundColor: "#001f3f", color: "white" ,direction:locales === "ar"?"rtl":"ltr" }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>

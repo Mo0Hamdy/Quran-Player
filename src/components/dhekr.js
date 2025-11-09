@@ -24,7 +24,11 @@ export default function Dhekr({ element }) {
         width: 400,
         background: "#F3F6F4",
         color:"text.card",
-        backgroundColor:"background.default"
+        backgroundColor:"background.default",
+        display:"flex",
+        flexDirection:"column",
+        justifyContent:"space-evenly"
+
       }}
     >
       <CardContent>

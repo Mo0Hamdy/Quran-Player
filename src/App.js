@@ -1,36 +1,26 @@
 import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import { Link } from "react-scroll";
 import "./App.css";
 // componenets
+import Home from "./components/Home";
 import Adhkar from "./components/Adhkar";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
-import Home from "./components/Home";
 import Sheikh from "./components/Sheikh";
 
 // MUI components
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 // Context hooks
 import { DataProvider } from "./context/dataProvider";
 import { SurahProvider } from "./context/surahProvider";
+import { LanguageProvider } from "./context/languageProvider";
 function App() {
-  const { t, i18n } = useTranslation();
-  const [locales, setLocales] = useState("ar");
   const [showArrowUp, setShowArrowUp] = useState(false);
   const [mode, setMode] = useState("Dark Mode");
-  function handleLocales() {
-    if (locales === "en") {
-      i18n.changeLanguage("ar");
-      setLocales("ar");
-    } else if (locales === "ar") {
-      i18n.changeLanguage("en");
-      setLocales("en");
-    }
-  }
+
   const theme = createTheme({
     typography: {
       fontFamily: ["Merhey"],
@@ -49,7 +39,7 @@ function App() {
               title: "#1a1a1a",
               primary: "#1a1a1a",
               secondary: "#4d4d4d",
-              card:"#004B23",
+              card: "#004B23",
               icon: "#6c6c6c",
             },
           }
@@ -65,7 +55,7 @@ function App() {
               title: "#f1f5f9",
               primary: "#e6e6e6",
               secondary: "#9aa5b1",
-              card:"#ffffff",
+              card: "#ffffff",
               icon: "#ffffff",
             },
           },
@@ -86,42 +76,34 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <SurahProvider>
-        <DataProvider>
-          <div
-            className="App"
-            style={{
-              direction: locales === "ar" ? "rtl" : "ltr",
-            }}
-          >
-            <section id="navBar">
-              <NavBar
-                locales={locales}
-                mode={mode}
-                setMode={setMode}
-                handleLocales={handleLocales}
-              />
-            </section>
-            <Home />
-            <section id="Holy Quran">
-              <Sheikh locales={locales} />
-            </section>
-            <section id="Adhkar">
-              <Adhkar locales={locales} />
-            </section>
-            <section id="Contact Us">
-              <Footer />
-            </section>
-            <Link to="navBar">
-              <KeyboardArrowUpIcon
-                sx={{ opacity: showArrowUp ? "1" : "0" }}
-                className="Link"
-              />
-            </Link>
-          </div>
-        </DataProvider>
-      </SurahProvider>
-      <CssBaseline />
+      <LanguageProvider>
+        <SurahProvider>
+          <DataProvider>
+            <div className="App">
+              <section id="navBar">
+                <NavBar mode={mode} setMode={setMode} />
+              </section>
+              <Home />
+              <section id="Holy Quran">
+                <Sheikh />
+              </section>
+              <section id="Adhkar">
+                <Adhkar />
+              </section>
+              <section id="Contact Us">
+                <Footer />
+              </section>
+              <Link to="navBar">
+                <KeyboardArrowUpIcon
+                  sx={{ opacity: showArrowUp ? "1" : "0" }}
+                  className="Link"
+                />
+              </Link>
+            </div>
+          </DataProvider>
+        </SurahProvider>
+        <CssBaseline />
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

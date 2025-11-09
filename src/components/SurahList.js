@@ -1,14 +1,14 @@
+import { SurahContext } from "../context/surahProvider";
+import { LanguageContext } from "../context/languageProvider";
 import { useContext } from "react";
 import "../quran.css";
-import { SurahContext } from "../context/surahProvider";
 
 export default function SurahList({
   sheikhData,
   setSheikhData,
-  setSurahIndex,
-  locales,
 }) {
   const { surahName } = useContext(SurahContext);
+  const {locales} = useContext(LanguageContext)
 
   const arabicList = surahName.arabicName.map((e, index) => {
     const fileNumber = String(index + 1).padStart(3, "0");
@@ -19,12 +19,12 @@ export default function SurahList({
           setSheikhData({
             ...sheikhData,
             surahName: e,
+            Index: index + 1,
             surahLink: `${sheikhData.host}${fileNumber}.mp3`,
           });
-          setSurahIndex(fileNumber);
         }}
         style={{
-          backgroundColor: sheikhData.surahName === e ? "#6baf8d" : null,
+          backgroundColor: sheikhData.Index === (index+1) ? "#6baf8d" : null,
         }}
       >
         {index + 1} {e}
@@ -41,12 +41,12 @@ export default function SurahList({
           setSheikhData({
             ...sheikhData,
             surahName: e,
+            Index: index + 1,
             surahLink: `${sheikhData.host}${fileNumber}.mp3`,
           });
-          setSurahIndex(fileNumber);
         }}
         style={{
-          backgroundColor: sheikhData.surahName === e ? "#6baf8d" : null,
+          backgroundColor: sheikhData.Index === index+1 ? "#6baf8d" : null,
         }}
       >
         {index + 1} {e}

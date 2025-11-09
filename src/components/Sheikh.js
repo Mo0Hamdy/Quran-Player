@@ -1,30 +1,33 @@
-import { useState, useContext, useEffect } from "react";
-import { DataContext } from "../context/dataProvider";
-import { useTranslation } from "react-i18next";
 import "../App.css";
 import { Link } from "react-scroll";
+import { useTranslation } from "react-i18next";
+import { useState, useContext, useEffect } from "react";
+
+// Contexts
+import { DataContext } from "../context/dataProvider";
+import { LanguageContext } from "../context/languageProvider";
 
 // MUI Components
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardActions from "@mui/material/CardActions";
+import CardMedia from "@mui/material/CardMedia";
 import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import CardActionArea from "@mui/material/CardActionArea";
 // import { useTheme } from "@emotion/react";
 
 // Components
 import PlayCard from "./PlayCard";
 import SurahList from "./SurahList";
 
-export default function Quran({ locales }) {
+export default function Quran() {
   // const theme = useTheme();
   const { t } = useTranslation();
   const dataFromContext = useContext(DataContext);
+  const { locales } = useContext(LanguageContext);
   const [recitersData, setRecitersData] = useState(dataFromContext);
-  let [surahIndex, setSurahIndex] = useState();
 
   useEffect(() => {
     setRecitersData(dataFromContext);
@@ -36,11 +39,12 @@ export default function Quran({ locales }) {
       className="card"
       sx={{
         width: { lg: "300px", md: "250px", sm: "200px", xs: "180px" },
-        fontSize: { lg: "30px", md: "23px", sm: "20px", xs: "15px" },
         backgroundColor: "background.card",
         borderRadius: "10px",
         height: { lg: "310px", md: "280px", sm: "220px", xs: "230px" },
         border: "2px solid white",
+        direction: locales === "en" ? "ltr" : "rtl",
+        // direction:"ltr"
       }}
       key={data.id}
     >
@@ -60,7 +64,7 @@ export default function Quran({ locales }) {
             className="cardContent"
             component="div"
             sx={{
-              fontSize: { lg: "24px", md: "22px", sm: "18px", xs: "15px" },
+              fontSize: { lg: "22px", md: "22px", sm: "18px", xs: "15px" },
               color: "primary",
             }}
           >
@@ -114,14 +118,9 @@ export default function Quran({ locales }) {
         }}
       >
         <section id="playList">
-          <PlayCard sheikhData={sheikhData} />
+          <PlayCard sheikhData={sheikhData} setSheikhData={setSheikhData} />
 
-          <SurahList
-            setSheikhData={setSheikhData}
-            sheikhData={sheikhData}
-            setSurahIndex={setSurahIndex}
-            locales={locales}
-          />
+          <SurahList setSheikhData={setSheikhData} sheikhData={sheikhData} />
         </section>
       </Container>
     </Container>
