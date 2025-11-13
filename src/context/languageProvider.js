@@ -4,7 +4,7 @@ export const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
   const { i18n } = useTranslation();
-  const [locales, setLocales] = useState("ar");
+  const [locales, setLocales] = useState("en");
   function handleLocales() {
     if (locales === "en") {
       i18n.changeLanguage("ar");
