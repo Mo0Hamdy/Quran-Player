@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 export const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const { i18n } = useTranslation();
+  const {i18n } = useTranslation();
   const [locales, setLocales] = useState("ar");
   function handleLocales() {
     if (locales === "en") {

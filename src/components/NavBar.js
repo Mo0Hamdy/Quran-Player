@@ -22,8 +22,7 @@ function ResponsiveAppBar({ mode, setMode }) {
   const { t } = useTranslation();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-   const {locales,handleLocales }=useContext(LanguageContext)
-  // console.log(locales)
+  const { locales, handleLocales } = useContext(LanguageContext);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -43,7 +42,11 @@ function ResponsiveAppBar({ mode, setMode }) {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#001f3f", color: "white" ,direction:locales === "ar"?"rtl":"ltr" }}
+      sx={{
+        backgroundColor: "#001f3f",
+        color: "white",
+        direction: locales === "ar" ? "rtl" : "ltr",
+      }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -94,7 +97,7 @@ function ResponsiveAppBar({ mode, setMode }) {
                 <Link to={page} key={index} smooth={true} duration={500}>
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Typography
-                      sx={{ textAlign: "center",fontSize:"1rem" }}
+                      sx={{ textAlign: "center", fontSize: "1rem" }}
                       // color="inherit"
                     >
                       {t(page)}
