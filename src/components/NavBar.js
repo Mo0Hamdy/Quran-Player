@@ -94,8 +94,7 @@ function ResponsiveAppBar({ mode, setMode }) {
                 <Link to={page} key={index} smooth={true} duration={500}>
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Typography
-                      variant="h5"
-                      sx={{ textAlign: "center" }}
+                      sx={{ textAlign: "center",fontSize:"1rem" }}
                       // color="inherit"
                     >
                       {t(page)}
