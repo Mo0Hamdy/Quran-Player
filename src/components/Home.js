@@ -11,7 +11,7 @@ export default function Home() {
         muted
         style={{ width: "100%" }}
       >
-        <source src="/Ramadan background Islam.webm" type="video/webm" />
+        <source src={process.env.PUBLIC_URL + "/Ramadan background Islam.webm"} type="video/webm" />
       </video>
       <div className="home">
         <Typography

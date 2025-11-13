@@ -147,7 +147,7 @@ function ResponsiveAppBar({ mode, setMode }) {
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar
                   alt="جنة المسلم"
-                  src="/muslimParadise.png"
+                  src={process.env.PUBLIC_URL + "/muslimParadise.png"}
                   sx={{ border: "2px solid green", borderRadius: "50%" }}
                 />
               </IconButton>

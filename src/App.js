@@ -76,6 +76,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <LanguageProvider>
         <SurahProvider>
           <DataProvider>
@@ -102,7 +103,6 @@ function App() {
             </div>
           </DataProvider>
         </SurahProvider>
-        <CssBaseline />
       </LanguageProvider>
     </ThemeProvider>
   );
