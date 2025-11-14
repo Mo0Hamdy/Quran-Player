@@ -17,7 +17,8 @@ export default function PlayCard({ sheikhData, setSheikhData }) {
         height: "100%",
         border: "2px solid white",
         borderRadius: "20px",
-        width: "328px",
+        width: "270px",
+        margin:"auto"
       }}
     >
       <Box
@@ -36,7 +37,7 @@ export default function PlayCard({ sheikhData, setSheikhData }) {
           setSheikhData={setSheikhData}
         />
       </Box>
-      <CardMedia component="img" sx={{ width: 151 }} image={sheikhData?.img} />
+      <CardMedia component="img" sx={{ width: "34%" }} image={sheikhData?.img} />
     </Card>
   );
 }

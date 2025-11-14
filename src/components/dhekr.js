@@ -31,7 +31,7 @@ export default function Dhekr({ element }) {
       }}
     >
       <CardContent>
-        <Typography variant="h5" component="div" align="center">
+        <Typography  sx={{fontSize:{lg:"1.5rem",sm:"1.3rem",xs:"1.3rem"}}} component="div" align="center">
           {text}
         </Typography>
       </CardContent>

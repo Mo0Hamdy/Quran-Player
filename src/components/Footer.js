@@ -1,4 +1,3 @@
-// import "../App.css";
 import "../footer.css";
 // MUI components
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
@@ -6,9 +5,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import Typography from "@mui/material/Typography";
 import { t } from "i18next";
-// import { useTheme } from "@mui/material/styles";
 export default function Footer() {
-  // const theme = useTheme();
   const data = [
     {
       id: 1,
@@ -46,19 +43,16 @@ export default function Footer() {
     <div
       style={{
         background: "#ccc",
-        paddingTop: "15px",
         textTransform: "capitalize",
       }}
       className="footer"
     >
       <div className="contact">
         <div className="left">
-          <h3
-            style={{ padding: "10px", color: "theme.text.primary " }}
-          >
+          <h3 style={{ padding: "10px", color: "theme.text.primary " }}>
             {t("contact us on social media")}
           </h3>
-          <div>
+          <div style={{ margin: "auto" }}>
             <ul className="icons">{icons}</ul>
           </div>
         </div>
@@ -69,7 +63,7 @@ export default function Footer() {
               width: { xs: "70%", md: "50%" },
               textAlign: "left",
               paddingBottom: "10px",
-              fontWeight:"500"
+              fontWeight: "500",
             }}
             color="text.primary"
           >

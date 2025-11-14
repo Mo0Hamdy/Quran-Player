@@ -113,8 +113,8 @@ export default function Quran() {
         className="playSurah"
         sx={{
           backgroundColor: "background.paper",
-          marginBlock: "50px",
-          paddingBlock: "50px",
+          marginBlock: "30px",
+          paddingBlock: "30px",
         }}
       >
         <section id="playList">

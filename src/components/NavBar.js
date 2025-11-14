@@ -116,11 +116,13 @@ function ResponsiveAppBar({ mode, setMode }) {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
+              // fontFamily: "monospace",
+              fontSize:"15px",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "primary.main",
               textDecoration: "none",
+              // textAlign:"center"
             }}
           >
             {t("Muslim Paradise")}
