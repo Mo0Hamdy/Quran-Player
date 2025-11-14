@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Quran-Player/static/css/main.e69ff007.css",
-    "main.js": "/Quran-Player/static/js/main.1d0a0c19.js",
+    "main.css": "/Quran-Player/static/css/main.8d796cff.css",
+    "main.js": "/Quran-Player/static/js/main.b66092bb.js",
     "static/js/453.dc4076ed.chunk.js": "/Quran-Player/static/js/453.dc4076ed.chunk.js",
     "static/js/38.623697c9.chunk.js": "/Quran-Player/static/js/38.623697c9.chunk.js",
     "static/media/Marhey-Medium.ttf": "/Quran-Player/static/media/Marhey-Medium.8241084678fe7a5c660d.ttf",
@@ -10,13 +10,13 @@
     "static/media/Marhey-Light.ttf": "/Quran-Player/static/media/Marhey-Light.79486c5bc9e17a0ec512.ttf",
     "static/media/Marhey-Bold.ttf": "/Quran-Player/static/media/Marhey-Bold.c28dd1514f0f1d3b1b9e.ttf",
     "index.html": "/Quran-Player/index.html",
-    "main.e69ff007.css.map": "/Quran-Player/static/css/main.e69ff007.css.map",
-    "main.1d0a0c19.js.map": "/Quran-Player/static/js/main.1d0a0c19.js.map",
+    "main.8d796cff.css.map": "/Quran-Player/static/css/main.8d796cff.css.map",
+    "main.b66092bb.js.map": "/Quran-Player/static/js/main.b66092bb.js.map",
     "453.dc4076ed.chunk.js.map": "/Quran-Player/static/js/453.dc4076ed.chunk.js.map",
     "38.623697c9.chunk.js.map": "/Quran-Player/static/js/38.623697c9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e69ff007.css",
-    "static/js/main.1d0a0c19.js"
+    "static/css/main.8d796cff.css",
+    "static/js/main.b66092bb.js"
   ]
 }
