@@ -1,7 +1,8 @@
+import "../quran.css";
+import { useContext } from "react";
+// Context
 import { SurahContext } from "../context/surahProvider";
 import { LanguageContext } from "../context/languageProvider";
-import { useContext } from "react";
-import "../quran.css";
 
 export default function SurahList({
   sheikhData,

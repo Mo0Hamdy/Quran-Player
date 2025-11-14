@@ -33,7 +33,7 @@ function App() {
             background: {
               default: "#f8fafc",
               paper: "#f1f5f9",
-              card: "#ffffff",
+              card: "#F8F8F8",
             },
             text: {
               title: "#1a1a1a",
@@ -45,11 +45,11 @@ function App() {
           }
         : {
             primary: { main: "#4aa3ff" },
-            secondary: { main: "#4dd6b5" },
+          secondary: { main: "#4dd6b5" },
             background: {
               default: "#0f172a",
               paper: "#1e293b",
-              card: "#1e293b",
+              card: "#001f3f",
             },
             text: {
               title: "#f1f5f9",

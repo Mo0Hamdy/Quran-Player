@@ -4,12 +4,12 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // MUI components
-import Button from "@mui/material/Button";
-import ReplayIcon from "@mui/icons-material/Replay";
 import Card from "@mui/material/Card";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import ReplayIcon from "@mui/icons-material/Replay";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
 
 export default function Dhekr({ element }) {
   const { id, count, text } = element;
@@ -24,7 +24,7 @@ export default function Dhekr({ element }) {
         width: 400,
         background: "#F3F6F4",
         color: "text.card",
-        backgroundColor: "background.default",
+        backgroundColor: "background.card",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-evenly",

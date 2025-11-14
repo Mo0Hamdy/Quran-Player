@@ -43,8 +43,6 @@ export default function AudioCard({ sheikhData, setSheikhData }) {
       sx={{
         display: "flex",
         alignItems: "center",
-        // p: 2,
-        // borderTop: "2px solid white",
         margin: "auto",
         boxShadow:"none"
       }}

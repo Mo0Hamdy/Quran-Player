@@ -66,7 +66,7 @@ html {
   border-radius: 15px;
   bottom: 50px;
   right: 50px;
-  background-color: #6a1b9a;
+  background-color: rgb(18, 83, 162);;
   transition: 1s !important;
   cursor: pointer;
 }

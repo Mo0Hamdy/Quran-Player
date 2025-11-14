@@ -1,10 +1,10 @@
 import "../footer.css";
+import { t } from "i18next";
 // MUI components
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import Typography from "@mui/material/Typography";
-import { t } from "i18next";
 export default function Footer() {
   const data = [
     {

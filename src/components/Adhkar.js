@@ -1,15 +1,15 @@
+// React
+import { useState, useEffect, useMemo } from "react";
+// Others
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@emotion/react";
 import { v4 as uuidv4 } from "uuid";
-import Dhekr from "./dhekr";
 import "../App.css";
-
 // MUI Components
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import ToggleButton from "@mui/material/ToggleButton";
-
-// React
-import { useState, useEffect, useMemo } from "react";
+// Components
+import Dhekr from "./dhekr";
 
 export default function Adhkar() {
   const theme = useTheme();
@@ -315,6 +315,7 @@ export default function Adhkar() {
           justifyContent: "space-around",
           gap: "20px",
           padding: "20px",
+          backgroundColor:"theme.background.default"
         }}
       >
         {adhkar}

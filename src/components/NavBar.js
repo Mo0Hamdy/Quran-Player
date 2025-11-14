@@ -96,10 +96,7 @@ function ResponsiveAppBar({ mode, setMode }) {
               {pages.map((page, index) => (
                 <Link to={page} key={index} smooth={true} duration={500}>
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography
-                      sx={{ textAlign: "center", fontSize: "1rem" }}
-                      // color="inherit"
-                    >
+                    <Typography sx={{ textAlign: "center", fontSize: "1rem" }}>
                       {t(page)}
                     </Typography>
                   </MenuItem>
@@ -116,13 +113,12 @@ function ResponsiveAppBar({ mode, setMode }) {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              // fontFamily: "monospace",
-              fontSize:"15px",
+              fontSize: "15px",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "primary.main",
               textDecoration: "none",
-              // textAlign:"center"
+              textAlign: "center",
             }}
           >
             {t("Muslim Paradise")}
@@ -135,7 +131,6 @@ function ResponsiveAppBar({ mode, setMode }) {
                   onClick={handleCloseNavMenu}
                   sx={{
                     my: 2,
-                    // color: "inherit",
                     display: "block",
                     fontSize: "18px",
                     color: "secondary.main",
