@@ -42,14 +42,17 @@ html {
 .playSurah {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding-block: 20px;
   margin-block: 20px;
-  justify-content: space-evenly;
 }
 
 @media (max-width: 900px) {
   .playSurah {
     flex-direction: column-reverse;
+  }
+  #playList {
+    flex-direction: column;
   }
 }
 

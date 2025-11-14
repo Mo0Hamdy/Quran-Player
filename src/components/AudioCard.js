@@ -43,18 +43,19 @@ export default function AudioCard({ sheikhData, setSheikhData }) {
       sx={{
         display: "flex",
         alignItems: "center",
-        p: 2,
-        borderTop: "2px solid white",
+        // p: 2,
+        // borderTop: "2px solid white",
+        margin: "auto",
+        boxShadow:"none"
       }}
     >
       <IconButton sx={{ color: "text.icon" }}>
         <SkipNextIcon
+          sx={{ fontSize: { lg: "23px", md: "23px", sm: "20px", xs: "20px" } }}
           onClick={(e) => {
             sheikhData.Index >= 114
               ? e.preventDefault()
-              : // const fileNumber = String(sheikhData.Index).padStart(3, "0");
-
-                setSheikhData({
+              : setSheikhData({
                   ...sheikhData,
                   Index: sheikhData.Index + 1,
                   surahLink: `${sheikhData.host}${String(
@@ -70,10 +71,23 @@ export default function AudioCard({ sheikhData, setSheikhData }) {
         />
       </IconButton>
       <IconButton onClick={handlePlayPause} sx={{ color: "text.icon" }}>
-        {isPlaying ? <Pause /> : <PlayArrow />}
+        {isPlaying ? (
+          <Pause
+            sx={{
+              fontSize: { lg: "23px", md: "23px", sm: "20px", xs: "20px" },
+            }}
+          />
+        ) : (
+          <PlayArrow
+            sx={{
+              fontSize: { lg: "23px", md: "23px", sm: "20px", xs: "20px" },
+            }}
+          />
+        )}
       </IconButton>
       <IconButton sx={{ color: "text.icon" }}>
         <SkipPreviousIcon
+          sx={{ fontSize: { lg: "23px", md: "23px", sm: "20px", xs: "20px" } }}
           onClick={(e) => {
             handlePlayPause();
 

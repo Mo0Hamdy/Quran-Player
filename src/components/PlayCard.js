@@ -18,26 +18,27 @@ export default function PlayCard({ sheikhData, setSheikhData }) {
         border: "2px solid white",
         borderRadius: "20px",
         width: "270px",
-        margin:"auto"
+        margin: {lg:"0",md:"0", sm: "auto", xs: "small" },
       }}
     >
       <Box
         sx={{ display: "flex", flexDirection: "column", color: "text.icon" }}
       >
-        <CardContent sx={{ flex: "1 0 auto" }}>
-          <Typography component="div" variant="h5">
+        <CardContent sx={{ flex: "1 0 auto", padding: "8px 18px 0px" }}>
+          <Typography component="div" variant="h6">
             {t(sheikhData?.surahName)}
           </Typography>
-          <Typography variant="subtitle1" component="div">
+          <Typography component="div" sx={{ fontSize: "13px" }}>
             {t(sheikhData?.name)}
           </Typography>
         </CardContent>
-        <AudioCard
-          sheikhData={sheikhData}
-          setSheikhData={setSheikhData}
-        />
+        <AudioCard sheikhData={sheikhData} setSheikhData={setSheikhData} />
       </Box>
-      <CardMedia component="img" sx={{ width: "34%" }} image={sheikhData?.img} />
+      <CardMedia
+        component="img"
+        sx={{ width: "45%", height: "50%" }}
+        image={sheikhData?.img}
+      />
     </Card>
   );
 }

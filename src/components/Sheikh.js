@@ -117,7 +117,15 @@ export default function Quran() {
           paddingBlock: "30px",
         }}
       >
-        <section id="playList">
+        <section
+          id="playList"
+          style={{
+            display: "flex",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            width: "80%",
+          }}
+        >
           <PlayCard sheikhData={sheikhData} setSheikhData={setSheikhData} />
 
           <SurahList setSheikhData={setSheikhData} sheikhData={sheikhData} />

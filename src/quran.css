@@ -42,7 +42,8 @@ ul::-webkit-scrollbar-thumb {
   flex-direction: column;
   overflow-y: auto;
   background: linear-gradient(to bottom, transparent, #f0f0f0);
-  margin: 30px auto 0;
+  
+  margin: auto;
   box-shadow: 0px 0px 10px 0px #6baf8dab;
 }
 
@@ -61,6 +62,12 @@ ul::-webkit-scrollbar-thumb {
 }
 .sheikh ul a {
   color: #bbb;
+}
+
+@media(max-width:900px){
+  .sheikh ul{
+    margin: 30px auto 0;
+  }
 }
 
 @media (max-width: 700px) {

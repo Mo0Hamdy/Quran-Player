@@ -49,7 +49,7 @@ export default function Footer() {
     >
       <div className="contact">
         <div className="left">
-          <h3 style={{ padding: "10px", color: "theme.text.primary " }}>
+          <h3 style={{ padding: "10px", color: "theme.text.primary",fontWeight:"600" }}>
             {t("contact us on social media")}
           </h3>
           <div style={{ margin: "auto" }}>
@@ -63,7 +63,7 @@ export default function Footer() {
               width: { xs: "70%", md: "50%" },
               textAlign: "left",
               paddingBottom: "10px",
-              fontWeight: "500",
+              fontWeight: "600",
             }}
             color="text.primary"
           >
