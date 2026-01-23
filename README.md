@@ -60,10 +60,6 @@ Run the project:
 npm start
 
 
-The app will run on:
-
-http://localhost:3000
-
 🎯 Future Improvements
 
 🔍 Search for Surahs and Reciters
