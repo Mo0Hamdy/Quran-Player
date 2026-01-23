@@ -38,12 +38,6 @@ CSS3
 https://mo0hamdy.github.io/Quran-Player/
 
 
-📸 Screenshots
-
-You can add screenshots of the app here to make the project more attractive.
-
-![Quran Player Screenshot](./images/Screenshot 2026-01-23 153858.png)
-
 ⚙️ Installation & Run Locally
 
 Clone the repository:
