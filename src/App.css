@@ -102,30 +102,30 @@ html {
 }
 
 @font-face {
-  font-family: Merhey;
-  src: url("../public/fonts/Merhey/Marhey-Bold.ttf");
+  font-family: Alexandria;
+  src: url("../public/fonts/Alexandria/Alexandria-Bold.ttf");
   font-weight: 800;
 }
 
 @font-face {
   font-family: Merhey;
-  src: url("../public/fonts/Merhey/Marhey-SemiBold.ttf");
+  src: url("../public/fonts/Alexandria/Alexandria-SemiBold.ttf");
   font-weight: 700;
 }
 
 @font-face {
   font-family: Merhey;
-  src: url("../public/fonts/Merhey/Marhey-Regular.ttf");
+  src: url("../public/fonts/Alexandria/Alexandria-Regular.ttf");
   font-weight: 600;
 }
 @font-face {
   font-family: Merhey;
-  src: url("../public/fonts/Merhey/Marhey-Medium.ttf");
+  src: url("../public/fonts/Alexandria/Alexandria-Medium.ttf");
   font-weight: 500;
 }
 
 @font-face {
   font-family: Merhey;
-  src: url("../public/fonts/Merhey/Marhey-Light.ttf");
+  src: url("../public/fonts/Alexandria/Alexandria-Light.ttf");
   font-weight: 400;
 }
