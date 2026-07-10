@@ -103,29 +103,29 @@ html {
 
 @font-face {
   font-family: Alexandria;
-  src: url("../public/fonts/Alexandria/Alexandria-Bold.ttf");
+  src: url("../public/fonts/Alexandria/Alexandria-Bold.ttf") format("truetype");
   font-weight: 800;
 }
 
 @font-face {
   font-family: Alexandria;
-  src: url("../public/fonts/Alexandria/Alexandria-SemiBold.ttf");
+  src: url("../public/fonts/Alexandria/Alexandria-SemiBold.ttf") format("truetype");
   font-weight: 700;
 }
 
 @font-face {
   font-family: Alexandria;
-  src: url("../public/fonts/Alexandria/Alexandria-Regular.ttf");
+  src: url("../public/fonts/Alexandria/Alexandria-Regular.ttf") format("truetype");
   font-weight: 600;
 }
 @font-face {
   font-family: Alexandria;
-  src: url("../public/fonts/Alexandria/Alexandria-Medium.ttf");
+  src: url("../public/fonts/Alexandria/Alexandria-Medium.ttf") format("truetype");
   font-weight: 500;
 }
 
 @font-face {
   font-family: Alexandria;
-  src: url("../public/fonts/Alexandria/Alexandria-Light.ttf");
+  src: url("../public/fonts/Alexandria/Alexandria-Light.ttf") format("truetype");
   font-weight: 400;
 }

@@ -11,6 +11,7 @@ import ReplayIcon from "@mui/icons-material/Replay";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 
+
 export default function Dhekr({ element }) {
   const { id, count, text } = element;
   const [counter, setCounter] = useState(0);
@@ -27,7 +28,7 @@ export default function Dhekr({ element }) {
         backgroundColor: "background.card",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-evenly",
+        justifyContent: "space-between",
       }}
     >
       <CardContent>
