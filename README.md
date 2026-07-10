@@ -24,7 +24,7 @@ A modern Quran Player web application built with React.js that enables users to 
 
 ## 📸 Screenshots
 
-![Screenshot][/public/images/Screenshot.png]
+![Screenshot](/public/images/Screenshot.png)
 
 ## 🚀 Live Demo
 
