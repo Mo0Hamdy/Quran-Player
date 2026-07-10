@@ -1,75 +1,65 @@
-🕌 Muslim Paradise
+# 🕌 Muslim Paradise
 
-A modern Quran Player web application built with React.js that allows users to listen to Quran recitations online with a clean and user-friendly interface.
+A modern Quran Player web application built with React.js that enables users to listen to Quran recitations with a clean, responsive, and user-friendly interface. The application supports multiple reciters, multilingual content, and Islamic daily Azkar.
 
-✨ Features
+## ✨ Features
 
-🎧 Listen to Quran Recitations using the Audio API
+- 🎧 Listen to Quran recitations online
+- 🎙️ Select from multiple Quran reciters
+- 📖 Browse and play any Surah
+- ⏯️ Audio playback controls (Play / Pause / Next / Previous)
+- 🌙 Dark & Light mode
+- 🌍 Multi-language support (Arabic & English)
+- 🤲 Morning & Evening Azkar
+- 📱 Fully responsive design
 
-🎙️ Choose the Reciter
+## 🛠️ Tech Stack
 
-📖 Select any Surah easily
+- React.js
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Audio API
+- REST API
 
-⏭️ Playback Controls (Play / Pause / Next / Previous)
+## 📸 Screenshots
 
-🌙 Dark Mode & Light Mode
+[images/Screenshot 2026-07-10 122552.png]
 
-🌍 Multi-language Support (Arabic & English)
+## 🚀 Live Demo
 
-🤲 Morning & Evening Azkar Section
-
-📱 Responsive Design (works on desktop & mobile)
-
-🛠️ Tech Stack
-
-React.js
-
-Audio API
-
-JavaScript (ES6+)
-
-HTML5
-
-CSS3
-
-🚀 Live Demo
-
-🔗 Live Website:
+**Live Website:**  
 https://mo0hamdy.github.io/Quran-Player/
 
+## 📂 Repository
 
-⚙️ Installation & Run Locally
+https://github.com/Mo0Hamdy/Quran-Player
 
-Clone the repository:
+## ⚙️ Installation
 
+```bash
 git clone https://github.com/Mo0Hamdy/Quran-Player.git
-
-
-Navigate to the project directory:
 
 cd Quran-Player
 
-
-Install dependencies:
-
 npm install
 
-
-Run the project:
-
 npm start
+```
 
+## 🎯 Future Improvements
 
-🎯 Future Improvements
+- 🔍 Search for Surahs
+- 🔍 Search for Reciters
+- ❤️ Favorite Surahs
+- 📊 Audio progress bar with seeking support
+- ⏱️ Display current playback time & duration
 
-🔍 Search for Surahs and Reciters
+## 👨‍💻 Author
 
-❤️ Favorites list
+**Mohamed Hamdy**
 
-📊 Progress bar with time indicator
+MERN Stack Developer
 
-👨‍💻 Author
-
-Mohamed Hamdy
-
-GitHub: https://github.com/Mo0Hamdy
+GitHub:
+https://github.com/Mo0Hamdy

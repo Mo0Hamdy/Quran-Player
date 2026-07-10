@@ -23,7 +23,7 @@ function App() {
 
   const theme = createTheme({
     typography: {
-      fontFamily: ["Merhey"],
+      fontFamily: ["Alexandria"],
     },
     palette:
       mode === "Dark Mode"

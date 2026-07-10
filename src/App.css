@@ -108,24 +108,24 @@ html {
 }
 
 @font-face {
-  font-family: Merhey;
+  font-family: Alexandria;
   src: url("../public/fonts/Alexandria/Alexandria-SemiBold.ttf");
   font-weight: 700;
 }
 
 @font-face {
-  font-family: Merhey;
+  font-family: Alexandria;
   src: url("../public/fonts/Alexandria/Alexandria-Regular.ttf");
   font-weight: 600;
 }
 @font-face {
-  font-family: Merhey;
+  font-family: Alexandria;
   src: url("../public/fonts/Alexandria/Alexandria-Medium.ttf");
   font-weight: 500;
 }
 
 @font-face {
-  font-family: Merhey;
+  font-family: Alexandria;
   src: url("../public/fonts/Alexandria/Alexandria-Light.ttf");
   font-weight: 400;
 }
